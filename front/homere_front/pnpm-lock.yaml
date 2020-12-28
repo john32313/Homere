@@ -2,6 +2,7 @@ dependencies:
   '@testing-library/jest-dom': 5.11.6
   '@testing-library/react': 11.2.2_react-dom@17.0.1+react@17.0.1
   '@testing-library/user-event': 12.6.0
+  axios: 0.21.1
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
   react-scripts: 4.0.1
@@ -2681,6 +2682,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-5Kgy8Cz6LPC9DJcNb3yjAXTu3XihQgEdnIg50c//zOC/MyLP0Clg+Y8Sh9ZjjnvBrDZU4DgXS9C3T9r4/scGZQ==
+  /axios/0.21.1:
+    dependencies:
+      follow-redirects: 1.13.1_debug@4.3.1
+    dev: false
+    resolution:
+      integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   /axobject-query/2.2.0:
     dev: false
     resolution:
@@ -12153,6 +12160,7 @@ specifiers:
   '@testing-library/jest-dom': ^5.11.4
   '@testing-library/react': ^11.1.0
   '@testing-library/user-event': ^12.1.10
+  axios: ^0.21.1
   react: ^17.0.1
   react-dom: ^17.0.1
   react-refresh: ^0.9.0

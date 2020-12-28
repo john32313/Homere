@@ -9,9 +9,9 @@ router.post("/signup", async (req, res, next) => {
       "INSERT INTO users(email, password, name, lastname) VALUES (?,?,?,?)",
       [email, password, name, lastname]
     );
-    res.status(201).send(`Inserted at id ${results.insertId}`);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(201).json({ flash: "User has been signup !" });
+  } catch (error) {
+    res.status(500).json({ flash: error.message });
   }
 });
 

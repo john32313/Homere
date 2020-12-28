@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function Signup() {
   const [info, setInfo] = useState({
@@ -8,19 +9,25 @@ export default function Signup() {
     name: "",
     lastname: "",
   });
+  const [flash, setFlash] = useState({});
 
   const updateStateInfo = (e) => {
     setInfo((prev) => ({ ...info, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("A name was submitted: ", info);
+    try {
+      delete info.passwordbis;
+      const { data } = await axios.post("/auth/signup", info);
+      setFlash(data.flash);
+    } catch (error) {
+      setFlash(error.response.data.flash);
+    }
   };
-
   return (
     <>
-      <h1>{JSON.stringify(info, 1, 1)}</h1>
+      <h1>{flash[0] && JSON.stringify(flash, 1, 1)}</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email : </label>
         <input
